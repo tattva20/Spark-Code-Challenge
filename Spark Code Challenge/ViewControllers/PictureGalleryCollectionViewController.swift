@@ -27,7 +27,7 @@ class PictureGalleryCollectionViewController: NiblessViewController {
     }()
 
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         activityIndicator.hidesWhenStopped = true
         return activityIndicator
