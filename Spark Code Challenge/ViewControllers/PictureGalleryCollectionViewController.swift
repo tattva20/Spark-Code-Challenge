@@ -96,6 +96,7 @@ class PictureGalleryCollectionViewController: NiblessViewController {
 }
 
 extension PictureGalleryCollectionViewController: UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.pictureData.count
     }
