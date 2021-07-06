@@ -118,7 +118,6 @@ extension PictureGalleryCollectionViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let navigationController = navigationController else { return }
         viewModel.navigateToDetailsViewController(indexPath: indexPath)
     }
 
