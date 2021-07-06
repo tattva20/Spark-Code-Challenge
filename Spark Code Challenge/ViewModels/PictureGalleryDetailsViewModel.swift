@@ -1,6 +1,6 @@
 //
 //  PictureGalleryDetailsViewModel.swift
-//  Spark Technical Challenge
+//  Spark Code Challenge
 //
 //  Created by Octavio Rojas on 05/07/21.
 //

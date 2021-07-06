@@ -1,6 +1,6 @@
 //
 //  PictureRepositoryMock.swift
-//  Spark Technical ChallengeTests
+//  Spark Code ChallengeTests
 //
 //  Created by Octavio Rojas on 05/07/21.
 //
@@ -26,7 +26,7 @@ class PictureRepositoryMock: PictureRepository {
     
     func load(then handler: @escaping ([PictureData]) -> Void) {
         let pictureData = dataStore.load()
-        handler(dataStore.load())
+        handler(pictureData)
     }
     
     func loadImage(url: String, indexPath: IndexPath, then handler: @escaping (UIImage) -> Void) {

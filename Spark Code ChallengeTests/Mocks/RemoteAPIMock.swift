@@ -1,6 +1,6 @@
 //
 //  RemoteAPIMock.swift
-//  Spark Technical ChallengeTests
+//  Spark Code ChallengeTests
 //
 //  Created by Octavio Rojas on 05/07/21.
 //
