@@ -54,7 +54,7 @@ class PictureGalleryCollectionViewModel {
         }
     }
 
-    func NavigateTodetailsViewController(indexPath: IndexPath, navigationController: UINavigationController) {
+    func NavigateToDetailsViewController(indexPath: IndexPath, navigationController: UINavigationController) {
         let detailsPicture = pictureData[indexPath.item]
         let detailsViewModel = PictureGalleryDetailsViewModel(pictureRepository: pictureRepository, pictureData: detailsPicture)
         let detailsViewController = PictureGalleryDetailsViewController(pictureData: detailsPicture, viewModel: detailsViewModel)
