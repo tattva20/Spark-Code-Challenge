@@ -17,10 +17,8 @@ class PictureGalleryCollectionViewController: NiblessViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = PictureGalleryCollectionViewLayout()
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-
         collectionView.dataSource = self
         collectionView.delegate = self
-
         collectionView.register(PictureGalleryCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         collectionView.backgroundColor = UIColor.white
         return collectionView
