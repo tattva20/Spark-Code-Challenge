@@ -48,6 +48,18 @@ class PictureGalleryViewModelTests: XCTestCase {
         XCTAssertTrue(view.didReloadCollectionView)
 
     }
+        
+    func testViewModelNavigateToDetailsViewController_shouldNavigateToDetailsViewController() {
+        // Setup
+        let indexPath = IndexPath(item: 0, section: 0)
+        viewModel.setView(view: view)
+                
+        // Test
+        viewModel.navigateToDetailsViewController(indexPath: indexPath)
+        
+        // Verify
+        XCTAssertTrue(view.didNavigateToDetailsView)
+    }
 
     func testViewModelLoadImage_shouldReturnValidImage() {
         // Setup

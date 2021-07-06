@@ -119,7 +119,7 @@ extension PictureGalleryCollectionViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let navigationController = navigationController else { return }
-        viewModel.navigateToDetailsViewController(indexPath: indexPath, navigationController: navigationController)
+        viewModel.navigateToDetailsViewController(indexPath: indexPath)
     }
 
 }
@@ -139,4 +139,12 @@ extension PictureGalleryCollectionViewController: PictureGalleryCollectionViewPr
             self.collectionView.reloadData()
         }
     }
+    
+    func navigateToDetailsViewController(indexPath: IndexPath) {
+        let detailsViewModel = viewModel.detailsViewModel(for: indexPath)
+        let pictureData = viewModel.pictureData(for: indexPath)
+        let detailsViewController = PictureGalleryDetailsViewController(pictureData: pictureData, viewModel: detailsViewModel)
+        navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+
 }

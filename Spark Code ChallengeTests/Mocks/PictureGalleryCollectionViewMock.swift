@@ -9,9 +9,10 @@ import Foundation
 @testable import Spark_Code_Challenge
 
 class PictureGalleryCollectionViewMock: PictureGalleryCollectionViewProtocol {
-    
+ 
     var didReloadCollectionView = false
     var didLoadCollectionView = false
+    var didNavigateToDetailsView = false
     
     func reloadCollectionViewData() {
         didReloadCollectionView = true
@@ -21,6 +22,9 @@ class PictureGalleryCollectionViewMock: PictureGalleryCollectionViewProtocol {
         didLoadCollectionView = true
     }
     
+    func navigateToDetailsViewController(indexPath: IndexPath) {
+        didNavigateToDetailsView = true
+    }
     
 }
 

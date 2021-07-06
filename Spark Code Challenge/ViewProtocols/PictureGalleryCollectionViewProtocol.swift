@@ -11,5 +11,6 @@ protocol PictureGalleryCollectionViewProtocol: AnyObject {
 
     func reloadCollectionViewData()
     func loadCollectionViewData()
+    func navigateToDetailsViewController(indexPath: IndexPath)
 
 }

@@ -53,13 +53,18 @@ class PictureGalleryCollectionViewModel {
             handler(image)
         }
     }
+    
+    func pictureData(for indexPath: IndexPath) -> PictureData {
+        return pictureData[indexPath.item]
+    }
+    
+    func detailsViewModel(for indexPath: IndexPath) -> PictureGalleryDetailsViewModel {
+        let detailsPicture = pictureData(for: indexPath)
+        return PictureGalleryDetailsViewModel(pictureRepository: pictureRepository, pictureData: detailsPicture)
+    }
 
-    func navigateToDetailsViewController(indexPath: IndexPath, navigationController: UINavigationController) {
-        let detailsPicture = pictureData[indexPath.item]
-        let detailsViewModel = PictureGalleryDetailsViewModel(pictureRepository: pictureRepository, pictureData: detailsPicture)
-        let detailsViewController = PictureGalleryDetailsViewController(pictureData: detailsPicture, viewModel: detailsViewModel)
-        detailsViewController.modalPresentationStyle = .fullScreen
-        navigationController.pushViewController(detailsViewController, animated: true)
+    func navigateToDetailsViewController(indexPath: IndexPath) {
+        view?.navigateToDetailsViewController(indexPath: indexPath)
     }
 
 }
