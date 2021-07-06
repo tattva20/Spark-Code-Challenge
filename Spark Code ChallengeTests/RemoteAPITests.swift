@@ -20,6 +20,7 @@ class PictureGalleryRemoteAPITests: XCTestCase {
                                       url: "test url",
                                       thumbnailUrl: "test thumbniailurl")
         remoteAPIMock.dataModel = pictureData
+        let expectation = self.expectation(description: "FetchPictureGallery be executed.")
         
         // Test
         remoteAPIMock.fetchPictureGalleryDataModel(url: url) { (result: Result<[PictureData], RemoteAPIError>) in
@@ -27,6 +28,7 @@ class PictureGalleryRemoteAPITests: XCTestCase {
             case .success(let model):
                 // Verify
                 XCTAssertNotNil(model)
+                expectation.fulfill()
                 model.forEach { pictureData in
                     XCTAssertEqual(pictureData.albumId, 1)
                     XCTAssertEqual(pictureData.id, 1)
@@ -38,6 +40,9 @@ class PictureGalleryRemoteAPITests: XCTestCase {
                 XCTFail("Unexpected behavior")
             }
         }
+        
+        waitForExpectations(timeout: 1)
+        
     }
     
     func testFetchPictureGalleryDataModel_withError_shouldReturnError() {
@@ -45,6 +50,7 @@ class PictureGalleryRemoteAPITests: XCTestCase {
         let url = URL(string: "test")
         var remoteAPIMock = RemoteAPIMock()
         remoteAPIMock.error = .apiError
+        let expectation = self.expectation(description: "FetchPictureGallery be executed.")
         
         // Test
         remoteAPIMock.fetchPictureGalleryDataModel(url: url) { (result: Result<[PictureData], RemoteAPIError>) in
@@ -54,15 +60,20 @@ class PictureGalleryRemoteAPITests: XCTestCase {
             case .failure(let error):
                 
                 // Verify
+                expectation.fulfill()
                 XCTAssertNotNil(error)
             }
         }
+        
+        waitForExpectations(timeout: 1)
+        
     }
     
     func testLoadImage_withSuccess_shouldReturnImage() {
         // Setup
         let url = "test"
         let remoteAPIMock = RemoteAPIMock()
+        let expectation = self.expectation(description: "Load image should be executed.")
         
         // Test
         remoteAPIMock.loadImage(url: url) { (result: Result<UIImage, RemoteAPIError>) in
@@ -70,11 +81,15 @@ class PictureGalleryRemoteAPITests: XCTestCase {
             case .success(let image):
                 
                 // Verify
+                expectation.fulfill()
                 XCTAssertNotNil(image)
             case .failure:
                 XCTFail("Unexpected behavior")
             }
         }
+        
+        waitForExpectations(timeout: 1)
+        
     }
     
     func testLoadImage_withError_shouldReturnError() {
@@ -82,6 +97,7 @@ class PictureGalleryRemoteAPITests: XCTestCase {
         let url = "test"
         var remoteAPIMock = RemoteAPIMock()
         remoteAPIMock.error = .apiError
+        let expectation = self.expectation(description: "Load image should be executed.")
         
         // Test
         remoteAPIMock.loadImage(url: url) { (result: Result<UIImage, RemoteAPIError>) in
@@ -91,8 +107,12 @@ class PictureGalleryRemoteAPITests: XCTestCase {
             case .failure(let error):
                 
                 // Verify
+                expectation.fulfill()
                 XCTAssertNotNil(error)
             }
         }
+        
+        waitForExpectations(timeout: 1)
+        
     }
 }
