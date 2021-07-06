@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6EA1CF4D2694AE11000D929F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1CF4C2694AE11000D929F /* AppDelegate.swift */; };
+		6EA1CF4F2694AE11000D929F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1CF4E2694AE11000D929F /* SceneDelegate.swift */; };
+		6EA1CF512694AE11000D929F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1CF502694AE11000D929F /* ViewController.swift */; };
+		6EA1CF542694AE11000D929F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1CF522694AE11000D929F /* Main.storyboard */; };
+		6EA1CF562694AE12000D929F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1CF552694AE12000D929F /* Assets.xcassets */; };
+		6EA1CF592694AE12000D929F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1CF572694AE12000D929F /* LaunchScreen.storyboard */; };
+		6EA1CF642694AE12000D929F /* Spark_Code_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1CF632694AE12000D929F /* Spark_Code_ChallengeTests.swift */; };
+		6EA1CF6F2694AE12000D929F /* Spark_Code_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1CF6E2694AE12000D929F /* Spark_Code_ChallengeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EA1CF602694AE12000D929F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EA1CF412694AE11000D929F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EA1CF482694AE11000D929F;
+			remoteInfo = "Spark Code Challenge";
+		};
+		6EA1CF6B2694AE12000D929F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EA1CF412694AE11000D929F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EA1CF482694AE11000D929F;
+			remoteInfo = "Spark Code Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6EA1CF492694AE11000D929F /* Spark Code Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spark Code Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA1CF4C2694AE11000D929F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6EA1CF4E2694AE11000D929F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6EA1CF502694AE11000D929F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6EA1CF532694AE11000D929F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6EA1CF552694AE12000D929F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6EA1CF582694AE12000D929F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6EA1CF5A2694AE12000D929F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EA1CF5F2694AE12000D929F /* Spark Code ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spark Code ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA1CF632694AE12000D929F /* Spark_Code_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spark_Code_ChallengeTests.swift; sourceTree = "<group>"; };
+		6EA1CF652694AE12000D929F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EA1CF6A2694AE12000D929F /* Spark Code ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Spark Code ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA1CF6E2694AE12000D929F /* Spark_Code_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spark_Code_ChallengeUITests.swift; sourceTree = "<group>"; };
+		6EA1CF702694AE12000D929F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6EA1CF462694AE11000D929F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA1CF5C2694AE12000D929F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA1CF672694AE12000D929F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EA1CF402694AE11000D929F = {
+			isa = PBXGroup;
+			children = (
+				6EA1CF4B2694AE11000D929F /* Spark Code Challenge */,
+				6EA1CF622694AE12000D929F /* Spark Code ChallengeTests */,
+				6EA1CF6D2694AE12000D929F /* Spark Code ChallengeUITests */,
+				6EA1CF4A2694AE11000D929F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6EA1CF4A2694AE11000D929F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EA1CF492694AE11000D929F /* Spark Code Challenge.app */,
+				6EA1CF5F2694AE12000D929F /* Spark Code ChallengeTests.xctest */,
+				6EA1CF6A2694AE12000D929F /* Spark Code ChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EA1CF4B2694AE11000D929F /* Spark Code Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				6EA1CF4C2694AE11000D929F /* AppDelegate.swift */,
+				6EA1CF4E2694AE11000D929F /* SceneDelegate.swift */,
+				6EA1CF502694AE11000D929F /* ViewController.swift */,
+				6EA1CF522694AE11000D929F /* Main.storyboard */,
+				6EA1CF552694AE12000D929F /* Assets.xcassets */,
+				6EA1CF572694AE12000D929F /* LaunchScreen.storyboard */,
+				6EA1CF5A2694AE12000D929F /* Info.plist */,
+			);
+			path = "Spark Code Challenge";
+			sourceTree = "<group>";
+		};
+		6EA1CF622694AE12000D929F /* Spark Code ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				6EA1CF632694AE12000D929F /* Spark_Code_ChallengeTests.swift */,
+				6EA1CF652694AE12000D929F /* Info.plist */,
+			);
+			path = "Spark Code ChallengeTests";
+			sourceTree = "<group>";
+		};
+		6EA1CF6D2694AE12000D929F /* Spark Code ChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6EA1CF6E2694AE12000D929F /* Spark_Code_ChallengeUITests.swift */,
+				6EA1CF702694AE12000D929F /* Info.plist */,
+			);
+			path = "Spark Code ChallengeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6EA1CF482694AE11000D929F /* Spark Code Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EA1CF732694AE12000D929F /* Build configuration list for PBXNativeTarget "Spark Code Challenge" */;
+			buildPhases = (
+				6EA1CF452694AE11000D929F /* Sources */,
+				6EA1CF462694AE11000D929F /* Frameworks */,
+				6EA1CF472694AE11000D929F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spark Code Challenge";
+			productName = "Spark Code Challenge";
+			productReference = 6EA1CF492694AE11000D929F /* Spark Code Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6EA1CF5E2694AE12000D929F /* Spark Code ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EA1CF762694AE12000D929F /* Build configuration list for PBXNativeTarget "Spark Code ChallengeTests" */;
+			buildPhases = (
+				6EA1CF5B2694AE12000D929F /* Sources */,
+				6EA1CF5C2694AE12000D929F /* Frameworks */,
+				6EA1CF5D2694AE12000D929F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EA1CF612694AE12000D929F /* PBXTargetDependency */,
+			);
+			name = "Spark Code ChallengeTests";
+			productName = "Spark Code ChallengeTests";
+			productReference = 6EA1CF5F2694AE12000D929F /* Spark Code ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6EA1CF692694AE12000D929F /* Spark Code ChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EA1CF792694AE12000D929F /* Build configuration list for PBXNativeTarget "Spark Code ChallengeUITests" */;
+			buildPhases = (
+				6EA1CF662694AE12000D929F /* Sources */,
+				6EA1CF672694AE12000D929F /* Frameworks */,
+				6EA1CF682694AE12000D929F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EA1CF6C2694AE12000D929F /* PBXTargetDependency */,
+			);
+			name = "Spark Code ChallengeUITests";
+			productName = "Spark Code ChallengeUITests";
+			productReference = 6EA1CF6A2694AE12000D929F /* Spark Code ChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6EA1CF412694AE11000D929F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					6EA1CF482694AE11000D929F = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					6EA1CF5E2694AE12000D929F = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 6EA1CF482694AE11000D929F;
+					};
+					6EA1CF692694AE12000D929F = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 6EA1CF482694AE11000D929F;
+					};
+				};
+			};
+			buildConfigurationList = 6EA1CF442694AE11000D929F /* Build configuration list for PBXProject "Spark Code Challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6EA1CF402694AE11000D929F;
+			productRefGroup = 6EA1CF4A2694AE11000D929F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EA1CF482694AE11000D929F /* Spark Code Challenge */,
+				6EA1CF5E2694AE12000D929F /* Spark Code ChallengeTests */,
+				6EA1CF692694AE12000D929F /* Spark Code ChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6EA1CF472694AE11000D929F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA1CF592694AE12000D929F /* LaunchScreen.storyboard in Resources */,
+				6EA1CF562694AE12000D929F /* Assets.xcassets in Resources */,
+				6EA1CF542694AE11000D929F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA1CF5D2694AE12000D929F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA1CF682694AE12000D929F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6EA1CF452694AE11000D929F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA1CF512694AE11000D929F /* ViewController.swift in Sources */,
+				6EA1CF4D2694AE11000D929F /* AppDelegate.swift in Sources */,
+				6EA1CF4F2694AE11000D929F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA1CF5B2694AE12000D929F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA1CF642694AE12000D929F /* Spark_Code_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EA1CF662694AE12000D929F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA1CF6F2694AE12000D929F /* Spark_Code_ChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6EA1CF612694AE12000D929F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EA1CF482694AE11000D929F /* Spark Code Challenge */;
+			targetProxy = 6EA1CF602694AE12000D929F /* PBXContainerItemProxy */;
+		};
+		6EA1CF6C2694AE12000D929F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EA1CF482694AE11000D929F /* Spark Code Challenge */;
+			targetProxy = 6EA1CF6B2694AE12000D929F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6EA1CF522694AE11000D929F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EA1CF532694AE11000D929F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6EA1CF572694AE12000D929F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EA1CF582694AE12000D929F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6EA1CF712694AE12000D929F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6EA1CF722694AE12000D929F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6EA1CF742694AE12000D929F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Y2S9J934H;
+				INFOPLIST_FILE = "Spark Code Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DemoOrganization.Spark-Code-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6EA1CF752694AE12000D929F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Y2S9J934H;
+				INFOPLIST_FILE = "Spark Code Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DemoOrganization.Spark-Code-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6EA1CF772694AE12000D929F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Y2S9J934H;
+				INFOPLIST_FILE = "Spark Code ChallengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DemoOrganization.Spark-Code-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spark Code Challenge.app/Spark Code Challenge";
+			};
+			name = Debug;
+		};
+		6EA1CF782694AE12000D929F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Y2S9J934H;
+				INFOPLIST_FILE = "Spark Code ChallengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DemoOrganization.Spark-Code-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spark Code Challenge.app/Spark Code Challenge";
+			};
+			name = Release;
+		};
+		6EA1CF7A2694AE12000D929F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Y2S9J934H;
+				INFOPLIST_FILE = "Spark Code ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DemoOrganization.Spark-Code-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Spark Code Challenge";
+			};
+			name = Debug;
+		};
+		6EA1CF7B2694AE12000D929F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Y2S9J934H;
+				INFOPLIST_FILE = "Spark Code ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "DemoOrganization.Spark-Code-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Spark Code Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6EA1CF442694AE11000D929F /* Build configuration list for PBXProject "Spark Code Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EA1CF712694AE12000D929F /* Debug */,
+				6EA1CF722694AE12000D929F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EA1CF732694AE12000D929F /* Build configuration list for PBXNativeTarget "Spark Code Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EA1CF742694AE12000D929F /* Debug */,
+				6EA1CF752694AE12000D929F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EA1CF762694AE12000D929F /* Build configuration list for PBXNativeTarget "Spark Code ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EA1CF772694AE12000D929F /* Debug */,
+				6EA1CF782694AE12000D929F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EA1CF792694AE12000D929F /* Build configuration list for PBXNativeTarget "Spark Code ChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EA1CF7A2694AE12000D929F /* Debug */,
+				6EA1CF7B2694AE12000D929F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6EA1CF412694AE11000D929F /* Project object */;
+}
