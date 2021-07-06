@@ -9,7 +9,7 @@ import XCTest
 @testable import Spark_Code_Challenge
 
 class PictureDetailsVIewModelTests: XCTestCase {
-    
+
     private var viewModel: PictureGalleryDetailsViewModel!
     private var remoteAPI: RemoteAPIMock!
     private var dataStore: PictureDataStore!
@@ -31,17 +31,17 @@ class PictureDetailsVIewModelTests: XCTestCase {
         // Setup
         let url = "test"
         let expectation = self.expectation(description: "Load image should be executed.")
-        
+
         // Test
         viewModel.loadImage(url: url) { image in
-            
+
             // Verify
             expectation.fulfill()
             XCTAssertNotNil(image)
         }
-        
+
         waitForExpectations(timeout: 1)
-        
+
     }
 
 }
