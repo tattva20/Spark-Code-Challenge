@@ -19,34 +19,37 @@ class PictureRepositoryMock: PictureRepository {
         self.dataStore = dataStore
         self.remoteAPI = remoteAPI
     }
-    
+
     func save(pictureData: [PictureData]) {
         dataStore.save(pictureData: pictureData)
     }
-    
-    func load(then handler: @escaping ([PictureData]) -> Void) {
+
+    func load(then handler: @escaping (Result<[PictureData], RemoteAPIError>) -> Void) {
         let pictureData = dataStore.load()
-        handler(pictureData)
+        if let error = error {
+            handler(.failure(error))
+        }
+        handler(.success(pictureData))
     }
     
-    func loadImage(url: String, indexPath: IndexPath, then handler: @escaping (UIImage) -> Void) {
+    func loadImage(url: String, indexPath: IndexPath, then handler: @escaping (Result<UIImage, RemoteAPIError>) -> Void) {
         remoteAPI.loadImage(url: url) { (result: Result<UIImage, RemoteAPIError>) in
             switch result {
-            case .success(let image):
-                handler(image)
+            case .success(let result):
+                handler(.success(result))
             case .failure:
-                break
+                handler(.failure(.apiError))
             }
         }
     }
     
-    func loadImage(url: String, then handler: @escaping (UIImage) -> Void) {
+    func loadImage(url: String, then handler: @escaping (Result<UIImage, RemoteAPIError>) -> Void) {
         remoteAPI.loadImage(url: url) { (result: Result<UIImage, RemoteAPIError>) in
             switch result {
-            case .success(let image):
-                handler(image)
+            case .success(let result):
+                handler(.success(result))
             case .failure:
-                break
+                handler(.failure(.apiError))
             }
         }
     }

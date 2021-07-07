@@ -8,7 +8,7 @@
 import Foundation
 
 class PictureDataStoreConcrete: PictureDataStore {
-    
+
     // MARK: - Properties
 
     var docsURL: URL? {
@@ -37,7 +37,7 @@ class PictureDataStoreConcrete: PictureDataStore {
         guard let jsonData = try? Data(contentsOf: docsURL.appendingPathComponent("photos_data_model.json")) else {
             return []
         }
-        
+
         let decoder = JSONDecoder()
         let photosDataModel = try? decoder.decode([PictureData].self, from: jsonData)
         return photosDataModel ?? []

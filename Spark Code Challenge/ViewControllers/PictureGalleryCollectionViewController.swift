@@ -13,10 +13,12 @@ class PictureGalleryCollectionViewController: NiblessViewController {
 
     private let viewModel: PictureGalleryCollectionViewModel
     private let refreshControl = UIRefreshControl()
+    private let orientation = UIApplication.shared.statusBarOrientation
 
     private lazy var collectionView: UICollectionView = {
         let layout = PictureGalleryCollectionViewLayout()
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PictureGalleryCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
@@ -26,6 +28,7 @@ class PictureGalleryCollectionViewController: NiblessViewController {
 
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .gray)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         activityIndicator.hidesWhenStopped = true
         return activityIndicator
@@ -54,26 +57,49 @@ class PictureGalleryCollectionViewController: NiblessViewController {
         viewModel.loadData()
     }
 
+    override func viewWillLayoutSubviews() {
+        if orientation == .landscapeLeft || orientation == .landscapeRight {
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.collectionViewLayout = PictureGalleryCollectionViewLayout()
+        } else {
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.collectionViewLayout = PictureGalleryCollectionViewLayout()
+        }
+    }
+
     private func setupCollectionViews() {
         viewModel.setView(view: self)
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
+        setupConstraintsForCollectionView()
+    }
+
+    private func setupConstraintsForCollectionView() {
+        let constraints = [
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ]
+
+        constraints.forEach { $0.isActive = true }
     }
 
     private func setUpActivityIndicator() {
         activityIndicatorView.center = self.view.center
         view.addSubview(activityIndicatorView)
         view.addSubview(activityIndicatorLabel)
-        setupConstraintsForActivityIndicatorLabel()
-        activityIndicatorView.startAnimating()
+        setupConstraintsForActivityIndicatorView()
     }
 
-    private func setupConstraintsForActivityIndicatorLabel() {
+    private func setupConstraintsForActivityIndicatorView() {
         let constraints = [
-            activityIndicatorLabel.topAnchor.constraint(equalTo: activityIndicatorView.bottomAnchor, constant: 40),
-            activityIndicatorLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicatorLabel.centerYAnchor.constraint(equalTo: activityIndicatorView.centerYAnchor, constant: 60),
+            activityIndicatorLabel.centerXAnchor.constraint(equalTo: activityIndicatorView.centerXAnchor)
         ]
-        
+
         constraints.forEach { $0.isActive = true }
     }
 
@@ -106,7 +132,7 @@ extension PictureGalleryCollectionViewController: UICollectionViewDataSource {
 
         return cell
     }
-    
+
 }
 
 extension PictureGalleryCollectionViewController: UICollectionViewDelegate {
@@ -129,20 +155,48 @@ extension PictureGalleryCollectionViewController: PictureGalleryCollectionViewPr
             self.collectionView.refreshControl?.endRefreshing()
         }
     }
-    
+
     func loadCollectionViewData() {
         DispatchQueue.main.async {
-            self.activityIndicatorView.stopAnimating()
-            self.activityIndicatorLabel.isHidden = true
             self.collectionView.reloadData()
         }
     }
-    
+
     func navigateToDetailsViewController(indexPath: IndexPath) {
         let detailsViewModel = viewModel.detailsViewModel(for: indexPath)
         let pictureData = viewModel.pictureData(for: indexPath)
         let detailsViewController = PictureGalleryDetailsViewController(pictureData: pictureData, viewModel: detailsViewModel)
         navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+
+    func showAlert() {
+        DispatchQueue.main.async {
+            self.activityIndicatorView.stopAnimating()
+            self.activityIndicatorLabel.isHidden = true
+            let alert = UIAlertController(title: "Error",
+                                          message: "There was an error while retrieving the image, please be sure you are connected to the internet and then click OK to retry",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+                self?.viewModel.loadData()
+            }))
+            self.present(alert, animated: true)
+        }
+    }
+
+    func showActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicatorView.startAnimating()
+            self.setupConstraintsForActivityIndicatorView()
+            self.activityIndicatorView.isHidden = false
+            self.activityIndicatorLabel.isHidden = false
+        }
+    }
+
+    func hideActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicatorView.stopAnimating()
+            self.activityIndicatorLabel.isHidden = true
+        }
     }
 
 }

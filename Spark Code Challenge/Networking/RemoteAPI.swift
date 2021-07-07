@@ -17,13 +17,13 @@ public enum RemoteAPIError: Error {
 }
 
 public protocol RemoteAPI {
-    
+
     /// Retrieves all picture data models from the API.
     /// - Parameters:
     ///   - url: endpoint where the data will be retrieved from.
     ///   - handler: returns API response of type `[PictureData]`. or `RemoteAPIError`.
     func fetchPictureGalleryDataModel<T>(url: URL?, then handler: @escaping (Result<T, RemoteAPIError>) -> Void) where T : Decodable
-    
+
     /// Retrieves thumbnail image from the API for cell.
     /// - Parameters:
     ///   - url: endpoint where the data will be retrieved from.

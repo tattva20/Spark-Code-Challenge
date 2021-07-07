@@ -12,6 +12,7 @@ class PictureGalleryDetailsViewModel {
     // MARK: - Properties
 
     private let pictureRepository: PictureRepository
+    private weak var view: PictureGalleryDetailsViewProtocol?
     private var pictureData: PictureData
 
     init(pictureRepository: PictureRepository, pictureData: PictureData) {
@@ -19,12 +20,25 @@ class PictureGalleryDetailsViewModel {
         self.pictureData = pictureData
     }
 
+    func setView(view: PictureGalleryDetailsViewProtocol) {
+        self.view = view
+    }
+
     // MARK: - Methods
-    
-    func loadImage(url: String, then handler: @escaping (UIImage) -> Void) {
-        pictureRepository.loadImage(url: url) { image in
-            handler(image)
+
+    func loadImage(url: String, then handler: @escaping (Result<UIImage, RemoteAPIError>) -> Void) {
+        pictureRepository.loadImage(url: url) { result in
+            switch result {
+            case .success(let result):
+                handler(.success(result))
+            case .failure:
+                handler(.failure(.apiError))
+            }
         }
+    }
+
+    func showAlert() {
+        view?.showAlert()
     }
 
 }

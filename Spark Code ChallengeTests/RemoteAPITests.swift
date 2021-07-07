@@ -30,11 +30,11 @@ class PictureGalleryRemoteAPITests: XCTestCase {
                 XCTAssertNotNil(model)
                 expectation.fulfill()
                 model.forEach { pictureData in
-                    XCTAssertEqual(pictureData.albumId, 1)
-                    XCTAssertEqual(pictureData.id, 1)
-                    XCTAssertEqual(pictureData.title, "test title")
-                    XCTAssertEqual(pictureData.url, "test url")
-                    XCTAssertEqual(pictureData.thumbnailUrl, "test thumbniailurl")
+                    XCTAssertEqual(pictureData.albumId, 1, "AlbumId should be 1")
+                    XCTAssertEqual(pictureData.id, 1, "Id should be 1")
+                    XCTAssertEqual(pictureData.title, "test title", "title should be 'test title'")
+                    XCTAssertEqual(pictureData.url, "test url", "url should be 'test url'")
+                    XCTAssertEqual(pictureData.thumbnailUrl, "test thumbniailurl", "url should be 'thumbnailurl'")
                 }
             case .failure:
                 XCTFail("Unexpected behavior")
@@ -58,7 +58,7 @@ class PictureGalleryRemoteAPITests: XCTestCase {
             case .success:
                 XCTFail("Unexpected behavior")
             case .failure(let error):
-                
+
                 // Verify
                 expectation.fulfill()
                 XCTAssertNotNil(error)
@@ -79,7 +79,7 @@ class PictureGalleryRemoteAPITests: XCTestCase {
         remoteAPIMock.loadImage(url: url) { (result: Result<UIImage, RemoteAPIError>) in
             switch result {
             case .success(let image):
-                
+
                 // Verify
                 expectation.fulfill()
                 XCTAssertNotNil(image)
@@ -105,7 +105,7 @@ class PictureGalleryRemoteAPITests: XCTestCase {
             case .success:
                 XCTFail("Unexpected behavior")
             case .failure(let error):
-                
+
                 // Verify
                 expectation.fulfill()
                 XCTAssertNotNil(error)

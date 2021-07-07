@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E2307982695E769002068E9 /* PictureGalleryDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2307972695E769002068E9 /* PictureGalleryDetailsViewProtocol.swift */; };
 		6E2510032694B694004EFD75 /* RemoteAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2510022694B694004EFD75 /* RemoteAPIMock.swift */; };
 		6E2510052694B6A0004EFD75 /* PictureRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2510042694B6A0004EFD75 /* PictureRepositoryMock.swift */; };
 		6E2510072694B6AD004EFD75 /* PictureDataStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2510062694B6AD004EFD75 /* PictureDataStoreMock.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E2307972695E769002068E9 /* PictureGalleryDetailsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureGalleryDetailsViewProtocol.swift; sourceTree = "<group>"; };
 		6E2510022694B694004EFD75 /* RemoteAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAPIMock.swift; sourceTree = "<group>"; };
 		6E2510042694B6A0004EFD75 /* PictureRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRepositoryMock.swift; sourceTree = "<group>"; };
 		6E2510062694B6AD004EFD75 /* PictureDataStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureDataStoreMock.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				6EA1CFA72694B01F000D929F /* PictureGalleryCollectionViewProtocol.swift */,
+				6E2307972695E769002068E9 /* PictureGalleryDetailsViewProtocol.swift */,
 			);
 			path = ViewProtocols;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				6EA1CF8A2694AF30000D929F /* PictureDataStoreConcrete.swift in Sources */,
 				6EA1CFA22694AFEF000D929F /* PictureGalleryDetailsViewController.swift in Sources */,
 				6EA1CFA62694B012000D929F /* PictureGalleryDetailsViewModel.swift in Sources */,
+				6E2307982695E769002068E9 /* PictureGalleryDetailsViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

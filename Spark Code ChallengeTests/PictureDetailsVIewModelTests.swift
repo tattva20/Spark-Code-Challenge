@@ -37,7 +37,7 @@ class PictureDetailsVIewModelTests: XCTestCase {
 
             // Verify
             expectation.fulfill()
-            XCTAssertNotNil(image)
+            XCTAssertNotNil(image, "Returned image shouldn't be nil")
         }
 
         waitForExpectations(timeout: 1)

@@ -13,19 +13,28 @@ class PictureGalleryCollectionViewModel {
 
     private let pictureRepository: PictureRepository
     private weak var view: PictureGalleryCollectionViewProtocol?
-    var pictureData = [PictureData]()
+    private var dataSource = [PictureData]()
+    
+    var pictureData: [PictureData] {
+        return dataSource
+    }
 
     init(pictureRepository: PictureRepository) {
         self.pictureRepository = pictureRepository
     }
-
+    
     // MARK: - Methods
     
     func configure(_ cell: PictureGalleryCollectionViewCell, at indexPath: IndexPath) {
-        let url = pictureData[indexPath.item].thumbnailUrl
-        loadImage(url: url, indexPath: indexPath) { image in
-            DispatchQueue.main.async {
-                cell.imageView.image = image
+        let url = dataSource[indexPath.item].thumbnailUrl
+        loadImage(url: url, indexPath: indexPath) { result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    cell.imageView.image = image
+                }
+            case .failure:
+                break
             }
         }
     }
@@ -33,29 +42,59 @@ class PictureGalleryCollectionViewModel {
     func setView(view: PictureGalleryCollectionViewProtocol?) {
         self.view = view
     }
-
+    
     func loadData() {
-        pictureRepository.load { pictureData in
-            self.pictureData = pictureData
-            self.view?.loadCollectionViewData()
+        view?.showActivityIndicator()
+        pictureRepository.load { [weak self] result in
+            switch result {
+            case.success(let pictureData):
+                self?.dataSource = pictureData
+                self?.view?.hideActivityIndicator()
+                self?.view?.loadCollectionViewData()
+            case .failure:
+                self?.view?.hideActivityIndicator()
+                self?.showAlert()
+            }
+     
         }
     }
 
     func reloadData() {
-        pictureRepository.load { pictureData in
-            self.pictureData = pictureData
-            self.view?.reloadCollectionViewData()
+        pictureRepository.load { [weak self] result in
+            switch result {
+            case .success(let pictureData):
+                self?.dataSource = pictureData
+                self?.view?.reloadCollectionViewData()
+            case .failure:
+                self?.showAlert()
+            }
+        }
+    }
+    
+    func retryDataLoad() {
+        pictureRepository.load { [weak self] result in
+            switch result {
+            case .success(let pictureData):
+                self?.dataSource = pictureData
+            case .failure:
+                self?.view?.showAlert()
+            }
         }
     }
 
-    func loadImage(url: String, indexPath: IndexPath, then handler: @escaping (UIImage) -> Void)  {
-        pictureRepository.loadImage(url: url, indexPath: indexPath) { image in
-            handler(image)
+    func loadImage(url: String, indexPath: IndexPath, then handler: @escaping (Result<UIImage, RemoteAPIError>) -> Void) {
+        pictureRepository.loadImage(url: url, indexPath: indexPath) { result in
+            switch result {
+            case .success(let result):
+                handler(.success(result))
+            case .failure:
+                self.showAlert()
+            }
         }
     }
     
     func pictureData(for indexPath: IndexPath) -> PictureData {
-        return pictureData[indexPath.item]
+        return dataSource[indexPath.item]
     }
     
     func detailsViewModel(for indexPath: IndexPath) -> PictureGalleryDetailsViewModel {
@@ -65,6 +104,10 @@ class PictureGalleryCollectionViewModel {
 
     func navigateToDetailsViewController(indexPath: IndexPath) {
         view?.navigateToDetailsViewController(indexPath: indexPath)
+    }
+    
+    func showAlert() {
+        view?.showAlert()
     }
 
 }

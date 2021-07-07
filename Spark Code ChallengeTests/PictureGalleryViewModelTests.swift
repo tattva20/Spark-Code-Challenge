@@ -33,7 +33,9 @@ class PictureGalleryViewModelTests: XCTestCase {
         viewModel.loadData()
 
         // Verify
-        XCTAssertTrue(view.didLoadCollectionView)
+        XCTAssertTrue(view.didLoadCollectionView, "View should load collectionView.")
+        XCTAssertTrue(view.didShowActivityIndicator, "View should show activityIndicator when loading begins.")
+        XCTAssertTrue(view.didHideActivityIndicator, "View should hide activityIndicator when loading finishes.")
 
     }
 
@@ -45,20 +47,20 @@ class PictureGalleryViewModelTests: XCTestCase {
         viewModel.reloadData()
 
         // Verify
-        XCTAssertTrue(view.didReloadCollectionView)
+        XCTAssertTrue(view.didReloadCollectionView, "View should reload collectionView")
 
     }
-        
+
     func testViewModelNavigateToDetailsViewController_shouldNavigateToDetailsViewController() {
         // Setup
         let indexPath = IndexPath(item: 0, section: 0)
         viewModel.setView(view: view)
-                
+
         // Test
         viewModel.navigateToDetailsViewController(indexPath: indexPath)
-        
+
         // Verify
-        XCTAssertTrue(view.didNavigateToDetailsView)
+        XCTAssertTrue(view.didNavigateToDetailsView, "View should navigate to detailsView")
     }
 
     func testViewModelLoadImage_shouldReturnValidImage() {

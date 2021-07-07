@@ -22,14 +22,14 @@ class PictureGalleryCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.addSubview(imageView)
-        
+
         let constraints = [
             imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             imageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
             imageView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
             imageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
         ]
-        
+
         constraints.forEach { $0.isActive = true }
     }
 

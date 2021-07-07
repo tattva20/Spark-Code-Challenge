@@ -11,7 +11,6 @@ public class PictureGalleryCollectionViewLayout: UICollectionViewFlowLayout {
 
     override init() {
         super.init()
-
         let screenWidth = UIScreen.main.bounds.width
         let widthHeightConstant = UIScreen.main.bounds.width / 2.2
         self.itemSize = CGSize(width: widthHeightConstant,

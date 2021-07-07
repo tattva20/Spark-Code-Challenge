@@ -15,19 +15,19 @@ class PictureRepositoryConcrete: PictureRepository {
     private let dataStore: PictureDataStore
     private let remoteAPI: RemoteAPI
     private let url = URL(string: "https://jsonplaceholder.typicode.com/photos")
-    
+
     init(dataStore: PictureDataStore, remoteAPI: RemoteAPI) {
         self.dataStore = dataStore
         self.remoteAPI = remoteAPI
     }
 
     // MARK: - Methods
-    
+
     func save(pictureData: [PictureData]) {
         dataStore.save(pictureData: pictureData)
     }
 
-    func load(then handler: @escaping ([PictureData]) -> Void) {
+    func load(then handler: @escaping (Result<[PictureData], RemoteAPIError>) -> Void) {
         let pictureData = dataStore.load()
         
         if pictureData.isEmpty {
@@ -35,42 +35,41 @@ class PictureRepositoryConcrete: PictureRepository {
                 switch result {
                 case .success(let model):
                     self.dataStore.save(pictureData: model)
-                    handler(model)
+                    handler(.success(model))
                 case .failure:
-                    break
+                    handler(.failure(.apiError))
                 }
             }
         } else {
             self.dataStore.save(pictureData: pictureData)
-            handler(pictureData)
+            handler(.success(pictureData))
         }
     }
 
-    func loadImage(url: String, indexPath: IndexPath, then handler: @escaping (UIImage) -> Void) {
+    func loadImage(url: String, indexPath: IndexPath, then handler: @escaping (Result<UIImage, RemoteAPIError>) -> Void)  {
         let itemNumber = NSNumber(value: indexPath.row)
         if let cachedImage = self.cache.object(forKey: itemNumber) {
             print("Using a cached image for item: \(itemNumber)")
-            handler(cachedImage)
+            handler(.success(cachedImage))
         } else {
             remoteAPI.loadImage(url: url) { (result: Result<UIImage, RemoteAPIError>) in
                 switch result {
                 case .success(let image):
                     self.cache.setObject(image, forKey: itemNumber)
-                    handler(image)
+                    handler(.success(image))
                 case .failure:
-                    break
+                    handler(.failure(.apiError))
                 }
             }
-            
         }
         return
     }
 
-    func loadImage(url: String, then handler: @escaping(UIImage) -> Void) {
+    func loadImage(url: String, then handler: @escaping (Result<UIImage, RemoteAPIError>) -> Void) {
         remoteAPI.loadImage(url: url) { (result: Result<UIImage, RemoteAPIError>) in
             switch result {
             case .success(let image):
-                handler(image)
+                handler(.success(image))
             case .failure:
                 break
             }
